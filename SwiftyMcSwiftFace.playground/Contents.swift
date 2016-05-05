@@ -24,17 +24,41 @@ class SolveSomeProblems {
 
     //Return the number of UTF8, UTF16, UTF32 & Unicode Scalars & visual characters in a given string.
     func findMeSomeUTF(word: String) -> Int {
-
-    return 1
+        return 1
     }
 
     //Count the number of times a given letter occurs in a string.
     func countALetter(word: String) -> Int {
-
-        return word.characters.count
+        return -1
     }
     
-    //    Start with 2 int arrays, a and b, each length 2. Consider the sum of the values in each array. Return the array which has the largest sum. In event of a tie, return a.
+    func swapFirstAndLast(intArray: [Int]) -> [Int] {
+        return intArray
+    }
+    
+    // Anagram
+    
+    // Palindrome
+    
+    func findPalindrome(word: String) -> Bool {
+        return false
+    }
+    
+    // Given a string and an int n, return a string made of the first and last n chars from the string. The string length will be at least n.
+    func newWordFromFirstAndLastCharactersOfString(word: String, number: Int) -> String {
+        return ""
+    }
+    
+    // Given three integers, a, b & c, the function should return true if b or c is within the range of 1 from a AND the other is far away, namely different by 2 or more from A.
+    
+    func closeFar(intA: Int, intB: Int, intC: Int) -> Bool {
+        return false
+    }
+    
+    // Start with 2 int arrays, a and b, each length 2. Consider the sum of the values in each array. Return the array which has the largest sum. In event of a tie, return a.
+    func checkArrayLength(array1: [Int], array2: [Int]) -> [Int] {
+        return array1
+    }
 }
 
 class MyTests: XCTestCase {
@@ -59,7 +83,8 @@ class MyTests: XCTestCase {
     }
     
     func testCloseFar() {
-        
+        XCTAssertTrue(myTestClass.closeFar(1, b: 2, c: 3))
+        XCTAssertFalse(myTestClass.closeFar(5, b: 4, c: 1))
     }
     
     func testCountALetter() {
@@ -67,6 +92,32 @@ class MyTests: XCTestCase {
         XCTAssertEqual(myTestClass.countALetter(myWord), 5)
     }
     
+    func testSwapFirstAndLstObjectInArray() {
+        let array = [1,2,3,4,5]
+        let swapArray = [5,2,3,4,1]
+        
+        XCTAssertEqual(swapArray, myTestClass.swapFirstAndLast(array))
+    }
+    
+    func testBlackJack() {
+        XCTAssertEqual(19, myTestClass.blackJack(18, second: 19))
+        XCTAssertEqual(0, myTestClass.blackJack(22, second: 23))
+    }
+    
+    func testFindPanlindrome() {
+        XCTAssertTrue(myTestClass.findPalindrome("racecar"))
+        XCTAssertFalse(myTestClass.findPalindrome("jimRush"))
+    }
+    
+    func testNewWordFromFirstAndLastCharactersOfString() {
+        XCTAssertEqual("Tein", myTestClass.newWordFromFirstAndLastCharactersOfString("Teakin", number: 2))
+    }
+    
+    func testCheckArrayLength() {
+        let array1 = [1,5]
+        let array2 = [7,8]
+        XCTAssertEqual(array2, myTestClass.checkArrayLength(array1, array2: array2))
+    }
 }
 /*Boilerplate code to make all this stuff work in playground. If a test runs in a forest etc etc*/
 class PlaygroundTestObserver : NSObject, XCTestObservation {
