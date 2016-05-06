@@ -36,8 +36,6 @@ class SolveSomeProblems {
         return intArray
     }
     
-    // Anagram
-    
     // Palindrome
     
     func findPalindrome(word: String) -> Bool {
@@ -59,6 +57,31 @@ class SolveSomeProblems {
     func checkArrayLength(array1: [Int], array2: [Int]) -> [Int] {
         return array1
     }
+    
+    // Anagram
+    func checkForAnagram(words: [String], word: String) -> [String] {
+        // parse array of words into dictionary
+        print(words.count)
+        var mySortedKeyValues = Dictionary<String, [String]>()
+//        for word in words {
+//            let key = String(word.characters.sort{ $0<$1 })
+//            let keyExists = mySortedKeyValues[key] != nil
+//            if keyExists {
+//                var values = mySortedKeyValues[key]
+//                values?.append(word)
+//                mySortedKeyValues.updateValue(values!, forKey: key)
+//            } else {
+//                mySortedKeyValues[key] = [word]
+//            }
+//            
+//            //mySortedKeyValues.updateValue(mySortedKeyValues[key]?.append(word), forKey: key)
+//        }
+        // sort word alphabetically to get key
+        // check key against dictioary
+        // return array of words that match the key
+        return mySortedKeyValues[String(word.characters.sort{ $0<$1 })]!
+    }
+    
 }
 
 class MyTests: XCTestCase {
@@ -117,6 +140,24 @@ class MyTests: XCTestCase {
         let array1 = [1,5]
         let array2 = [7,8]
         XCTAssertEqual(array2, myTestClass.checkArrayLength(array1, array2: array2))
+    }
+    
+//    func testCheckForAnagram() {
+//        let lowercaseStrings = try! String(contentsOfFile: "/usr/share/dict/words").componentsSeparatedByString("\n").map({ $0.lowercaseString
+//        })
+//        
+//        let expectedResult = ["later", "alter", "alert"]
+//        print(myTestClass.checkForAnagram(lowercaseStrings, word: "alert"))
+//        XCTAssertEqual(expectedResult, myTestClass.checkForAnagram(lowercaseStrings, word: "later"))
+//    }
+    
+    func testThatAnagramThingyIsWorking() {
+        let lowercaseStrings: [String] = try! String(contentsOfFile: "/usr/share/dict/words").componentsSeparatedByString("\n").map({ $0.lowercaseString
+        })
+        print(myTestClass.checkForAnagram(lowercaseStrings, word: "alert"))
+        print("Hey")
+        //call method
+        //print anagrams for word
     }
 }
 /*Boilerplate code to make all this stuff work in playground. If a test runs in a forest etc etc*/
