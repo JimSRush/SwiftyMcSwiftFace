@@ -117,6 +117,8 @@ class MyTests: XCTestCase {
     func testSumOfEvenSquares() {
         XCTAssertEqual(myTestClass.sumOfEvenNumbersSquared([1,2,3,4,5,6,7,8,9,10]), 220)
         XCTAssertNotEqual(myTestClass.sumOfEvenNumbersSquared([1,2,3,4,5]), 25)
+        XCTAssertNotEqual(myTestClass.sumOfEvenNumbersSquared([1,2,3,4,5]), 55)
+        XCTAssertEqual(myTestClass.sumOfEvenNumbersSquared([1,2,3,4,5]), 20)
     }
     
     //Don't come at me about these deprecation warnings.
