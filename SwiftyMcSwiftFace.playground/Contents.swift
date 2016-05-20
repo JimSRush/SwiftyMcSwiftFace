@@ -3,11 +3,19 @@ import XCTest
 
 class SolveSomeProblems {
 
+    //Here's a fun hint: In Xcode 7, you can choose between automatic or manual execution of a playground by clicking and holding the ► arrow at the bottom left part of the playground.
     //Compute the sum of the squares of a given list of integers
     func sumOfSquares(list: [Int]) -> Int {
         let myList = list.map{$0*$0}.reduce(0, combine:+)
         return myList
         //return 1
+    }
+    
+    
+    //Compute the sum of the squares of the even numbers of a given list of integers
+    func sumOfEvenNumbersSquared(someList: [Int]) -> Int {
+        
+        return 0
     }
     
     //Given three integers, a, b & c, the function should return true if b or c is within the range of 1 from a AND the other is far away, namely different by 2 or more from A.
@@ -58,7 +66,36 @@ class SolveSomeProblems {
         return array1
     }
     
+    //Say that a "clump" in an array is a series of 2 or more adjacent elements of the same value. Return the number of clumps in the given array.
+    //    countClumps([1, 2, 2, 3, 4, 4]) → 2
+    //    countClumps([1, 1, 2, 1, 1]) → 2
+    //    countClumps([1, 1, 1, 1, 1]) → 1
+    func countClumps(intArray: [Int]) -> Int {
+    
+        return 0
+    }
+    
+    //Do what the box says
+    //Should always be a positive value
+    //As a reference, comparing 5th May to 5th May should return 0.
+    //Time shoudl be ignored -- Time Zones should be ignored. Have fun.
+    func numberOfDaysBetweenTwoDates(firstDate: NSDate, secondDate: NSDate) -> Int {
+        return 2
+    }
+    
+    //write extension to lexographically compare strings <>
+    
+    //take a list of numbers and turn it into a comma seperated array
+    //giveMeACommaSeparatedString([1,2,3,4]) -> "1,2,3,4"
+    
+    func giveMeACommaSeparatedString(intList: [Int]) -> String {
+        return "Hello there"
+    }
+    
+    
 }
+
+
 
 class MyTests: XCTestCase {
 
@@ -74,6 +111,34 @@ class MyTests: XCTestCase {
     
     func testPassingTests() {
         XCTAssertEqual(1+1, 2)
+    }
+    
+      //Compute the sum of the squares of the even numbers of a given list of integers
+    func testSumOfEvenSquares() {
+        XCTAssertEqual(myTestClass.sumOfEvenNumbersSquared([1,2,3,4,5,6,7,8,9,10]), 220)
+        XCTAssertNotEqual(myTestClass.sumOfEvenNumbersSquared([1,2,3,4,5]), 25)
+    }
+    
+    //Don't come at me about these deprecation warnings.
+    func testTheDateThing() {
+        let dateOne = NSDate(string: "2016-05-05 00:00:00 +1200")
+        let dateTwo = NSDate(string: "2016-05-05 23:00:00 +1200")
+        XCTAssertEqual(myTestClass.numberOfDaysBetweenTwoDates(dateOne!, secondDate: dateTwo!), 0)
+   
+        let anotherDateOne = NSDate(string: "2016-05-05 00:00:00 +1200")
+        let anotherDatetwo = NSDate(string: "2016-05-02 00:00:00 +1200")
+        XCTAssertEqual(myTestClass.numberOfDaysBetweenTwoDates(dateOne!, secondDate: dateTwo!), 3)
+    }
+    
+    func testSomethingWithCommasAndArrays() {
+        XCTAssertEqual(myTestClass.giveMeACommaSeparatedString([1,2,3,4]), "1,2,3,4")
+        XCTAssertNotEqual(myTestClass.giveMeACommaSeparatedString([1,2,3,7,5,4]), "2")
+    }
+    
+    func testClumps() {
+        XCTAssertEqual(myTestClass.countClumps([1, 2, 2, 3, 4, 4]), 2)
+        XCTAssert(myTestClass.countClumps([1, -1, 2, 3, -2, 3]) == 0)
+        XCTAssertEqual(myTestClass.countClumps([1, 1, 1, 1, 1]), 1)
     }
     
     func testSumOfSquares() {
