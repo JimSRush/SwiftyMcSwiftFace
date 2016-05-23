@@ -30,11 +30,6 @@ class SolveSomeProblems {
         return 0
     }
 
-    //Return the number of UTF8, UTF16, UTF32 & Unicode Scalars & visual characters in a given string.
-    func findMeSomeUTF(word: String) -> Int {
-        return 1
-    }
-
     //Count the number of times a given letter occurs in a string.
     func countALetter(word: String) -> Int {
         return -1
