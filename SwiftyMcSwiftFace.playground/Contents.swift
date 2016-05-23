@@ -4,24 +4,20 @@ import XCTest
 class SolveSomeProblems {
 
     //Here's a fun hint: In Xcode 7, you can choose between automatic or manual execution of a playground by clicking and holding the ► arrow at the bottom left part of the playground.
+    //If you finish early, feel free to either write some more tests of your own and push them to the repository for others to try.
+    
     //Compute the sum of the squares of a given list of integers
     func sumOfSquares(list: [Int]) -> Int {
-        let myList = list.map{$0*$0}.reduce(0, combine:+)
-        return myList
-        //return 1
+        return 1
     }
-    
     
     //Compute the sum of the squares of the even numbers of a given list of integers
     func sumOfEvenNumbersSquared(someList: [Int]) -> Int {
-        
         return 0
     }
     
     //Given three integers, a, b & c, the function should return true if b or c is within the range of 1 from a AND the other is far away, namely different by 2 or more from A.
     func closeFar(a: Int, b: Int, c: Int) -> Bool {
-        //if b-a (abs) or c-a(abs) == 1 or == 0
-        //if
         return true
     }
 
@@ -40,23 +36,22 @@ class SolveSomeProblems {
         return -1
     }
     
+    //Swap the first and last elements of an array of integers
     func swapFirstAndLast(intArray: [Int]) -> [Int] {
         return intArray
     }
     
-    // Palindrome
-    
+    //Given a string, returns a boolean whether the string is a palindrome or not
     func findPalindrome(word: String) -> Bool {
         return false
     }
     
-    // Given a string and an int n, return a string made of the first and last n chars from the string. The string length will be at least n.
+    // Given a string and an int, return a string made of the first and last n chars from the string. The string length will be at least n.
     func newWordFromFirstAndLastCharactersOfString(word: String, number: Int) -> String {
         return ""
     }
     
     // Given three integers, a, b & c, the function should return true if b or c is within the range of 1 from a AND the other is far away, namely different by 2 or more from A.
-    
     func closeFar(intA: Int, intB: Int, intC: Int) -> Bool {
         return false
     }
@@ -83,15 +78,12 @@ class SolveSomeProblems {
         return 2
     }
     
-    //write extension to lexographically compare strings <>
-    
-    //take a list of numbers and turn it into a comma seperated array
-    //giveMeACommaSeparatedString([1,2,3,4]) -> "1,2,3,4"
-    
+    //take a list of numbers and turn it into a comma seperated array: giveMeACommaSeparatedString([1,2,3,4]) -> "1,2,3,4"
     func giveMeACommaSeparatedString(intList: [Int]) -> String {
         return "Hello there"
     }
     
+//    The classic word-count algorithm: given an array of strings, return a Map<String, Integer> with a key for each different string, with the value the number of times that string appears in the array.
     
 }
 
