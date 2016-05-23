@@ -5,6 +5,7 @@ class SolveSomeProblems {
 
     //Here's a fun hint: In Xcode 7, you can choose between automatic or manual execution of a playground by clicking and holding the ► arrow at the bottom left part of the playground.
     //If you finish early, feel free to either write some more tests of your own and push them to the repository for others to try.
+    //Note, these tests aren't perfect, so if you find a broken one, let me know! And then you can fix it.
     
     //Compute the sum of the squares of a given list of integers
     func sumOfSquares(list: [Int]) -> Int {
@@ -83,8 +84,24 @@ class SolveSomeProblems {
         return "Hello there"
     }
     
-//    The classic word-count algorithm: given an array of strings, return a Map<String, Integer> with a key for each different string, with the value the number of times that string appears in the array.
+    //Given an array of strings, return a dictionary [String:Int] with a key for each different string, with the value the number of times that string
+    //appears in the array.
+    func countOccurrencesOfWords(words: [String]) -> [String:Int] {
+        return ["yes hi" : 1]
+    }
     
+    
+    /*Given an array of non-empty strings, return a dictionary of [String:String] where for every different string in the array, there is a key of its first character with the value of its last character.
+    
+    pairs(["code", "bug"]) → {"b": "g", "c": "e"}
+    pairs(["man", "moon", "main"]) → {"m": "n"}
+    pairs(["man", "moon", "good", "night"]) → {"g": "d", "n": "t", "m": "n"}*/
+
+
+    func pairs(words: [String]) -> [String: String] {
+    
+        return ["Oh go on" : "Have a cup of tea"]
+    }
 }
 
 
@@ -105,7 +122,31 @@ class MyTests: XCTestCase {
         XCTAssertEqual(1+1, 2)
     }
     
-      //Compute the sum of the squares of the even numbers of a given list of integers
+    func testPairs() {
+        
+    }
+    
+    //Don't @ me if this fails, since dictionaries in swift are inherently unordered.
+    func testTheOccurrencesOfWords() {
+        let dictionaryToCompareAgainst = [
+            "Hello" : 2,
+            "Keith" : 5,
+            "Mark" : 2,
+            "Arnold": 1,
+            "Bianca": 3,
+            "Rene": 2
+        ]
+        
+        let arrayOfNames = ["Hello", "Hello",
+                            "Keith", "Keith", "Keith", "Keith", "Keith",
+                            "Mark", "Mark",
+                            "Arnold",
+                            "Bianca", "Bianca", "Bianca",
+                            "Rene", "Rene"]
+        
+        XCTAssertEqual(myTestClass.countOccurrencesOfWords(arrayOfNames), dictionaryToCompareAgainst)
+    }
+    
     func testSumOfEvenSquares() {
         XCTAssertEqual(myTestClass.sumOfEvenNumbersSquared([1,2,3,4,5,6,7,8,9,10]), 220)
         XCTAssertNotEqual(myTestClass.sumOfEvenNumbersSquared([1,2,3,4,5]), 25)
