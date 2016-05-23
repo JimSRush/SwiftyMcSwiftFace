@@ -6,7 +6,7 @@ class SolveSomeProblems {
     /* Here's a fun hint: 
      In Xcode 7, you can choose between automatic or manual execution of a playground by clicking and holding the ► arrow at the bottom left part of the playground. This will save your battery life. Trust me.
      
-    If you finish early, feel free to either write some more tests of your own and push them to the repository for others to try.
+    If you finish early (Hi Keith!), feel free to either write some more tests of your own and push them to the repository for others to try.
     
     Note, these tests aren't perfect, so if you find a broken one, let me know! And then you can fix it.*/
     
