@@ -3,9 +3,12 @@ import XCTest
 
 class SolveSomeProblems {
 
-    //Here's a fun hint: In Xcode 7, you can choose between automatic or manual execution of a playground by clicking and holding the ► arrow at the bottom left part of the playground.
-    //If you finish early, feel free to either write some more tests of your own and push them to the repository for others to try.
-    //Note, these tests aren't perfect, so if you find a broken one, let me know! And then you can fix it.
+    /* Here's a fun hint: 
+     In Xcode 7, you can choose between automatic or manual execution of a playground by clicking and holding the ► arrow at the bottom left part of the playground. This will save your battery life. Trust me.
+     
+    If you finish early, feel free to either write some more tests of your own and push them to the repository for others to try.
+    
+    Note, these tests aren't perfect, so if you find a broken one, let me know! And then you can fix it.*/
     
     //Compute the sum of the squares of a given list of integers
     func sumOfSquares(list: [Int]) -> Int {
@@ -123,7 +126,11 @@ class MyTests: XCTestCase {
     }
     
     func testPairs() {
+        let firstPairToTest = ["code", "bug"]
+        let firstPairToCheck = ["b": "g", "c": "e"]
+        XCTAssertEqual(myTestClass.pairs(firstPairToTest), firstPairToCheck)
         
+        XCTAssertNotEqual(myTestClass.pairs(firstPairToTest), ["Oh" : "Really"])
     }
     
     //Don't @ me if this fails, since dictionaries in swift are inherently unordered.
@@ -217,9 +224,8 @@ class MyTests: XCTestCase {
         let array2 = [7,8]
         XCTAssertEqual(array2, myTestClass.checkArrayLength(array1, array2: array2))
     }
-    
-
 }
+
 /*Boilerplate code to make all this stuff work in playground. If a test runs in a forest etc etc*/
 class PlaygroundTestObserver : NSObject, XCTestObservation {
     @objc func testCase(testCase: XCTestCase, didFailWithDescription description: String, inFile filePath: String?, atLine lineNumber: UInt) {
@@ -242,7 +248,6 @@ struct TestRunner {
         
         print("Ran \(run.executionCount) tests in \(run.testDuration)s with \(run.totalFailureCount) failures")
     }
-    
 }
 
 TestRunner().runTests(MyTests)
